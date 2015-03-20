@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgresql": {
+    "host": "bachelordb.cqezifzc8aaz.eu-central-1.rds.amazonaws.com",
+    "port": 5432,
+    "database": "sessionDB",
+    "username": "swagadmin",
+    "password": "swagswag",
+    "name": "postgresql",
+    "connector": "postgresql"
+  }
+}

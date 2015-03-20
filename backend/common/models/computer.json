@@ -1,0 +1,33 @@
+{
+  "name": "Computer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "Number",
+      "id": "true",
+      "generated": "true"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reservations": {
+      "type": "hasMany",
+      "model": "Reservation",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,17 @@
+{
+  "custom-login": {
+    "provider": "custom",
+    "module": "passport-custom",
+    "clientID": "frontend",
+    "clientSecret": "secret",
+    "callbackURL": "/auth/custom/callback",
+    "authPath": "/auth/custom",
+    "callbackPath": "/auth/custom/callback",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/login",
+    "authorizationURL": "https://localhost:3000/oauth/authorize",
+    "tokenURL": "https://localhost:3000/oauth/token",
+    "profileURL": "https://localhost:3000/me",
+    "scope": ["full"]
+  }
+}
