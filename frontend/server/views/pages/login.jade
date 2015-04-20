@@ -3,16 +3,9 @@ extends ../layouts/layout
 block content
   .row
     .col-md-12
-      h1 Login:
       ul.list-inline.list-unstyled
         li
-          a.btn.btn-primary(href='/local') Login with local account
-        li
-          a.btn.btn-primary(href="/auth/facebook") Login with Facebook
-        li
-          a.btn.btn-primary(href="/auth/google") Login with Google
-        li
-          a.btn.btn-primary(href="/auth/oauth2") Login with Twitter
+          a.btn.btn-primary(href='/local') Login
       br
       if (messages.error)
         p

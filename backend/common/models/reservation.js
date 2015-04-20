@@ -12,7 +12,7 @@ module.exports = function (Reservation) {
       if (_.contains(available, ctx.instance.computerId)) {
         next();
       } else {
-        next(new Error('This SUPER PC is allready reserved'));
+        next(new Error('This SUPER PC is already reserved'));
       }
     });
   });

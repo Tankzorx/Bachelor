@@ -21,7 +21,7 @@ schedule.scheduleJob(date_vi_faar_fra_post_request,function() {
 	http.get(options,function(response) {
 
 	}).on("error",function(e) {
-		console.log("FUCK YOU")
+		console.log("ERROR")
 	})
 })
 
@@ -69,14 +69,25 @@ server = net.createServer(function (socket) {
 
 });
 
-
- 
- 
- 
 server.listen(9000,"localhost")
 
 
 
+  // POSSIBLE DIFFERENT WAY OF DOING IT?
+// app.use("/superpc/:ip",function(res) {
+// 	var HOST = "127.0.0.1"
+// 	var PORT = 5901;
+// 	console.log("Hejej")
+
+// 	var client = new net.Socket();
+// 	client.connect(PORT,HOST,function() {
+// 		console.log("hey")
+// 	})
+
+// 	client.on("data",function(data) {
+// 		res.write(data);
+// 	})	
+// })
 
 //var backend_ip = "127.0.0.1";
 var port = 3002

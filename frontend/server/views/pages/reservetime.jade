@@ -1,0 +1,6 @@
+extends ../layouts/layout
+
+block content
+  h2 Third Party Profile(s)
+  each available_comp in available
+    a.small #{available_comp}

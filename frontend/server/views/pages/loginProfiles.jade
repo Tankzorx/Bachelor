@@ -1,26 +1,17 @@
 extends ../layouts/layout
 
 block content
-  h2 Third Party Profile(s)
-  p.small
-    if user.profiles.length !== 0
-      each val in user.profiles
-        h4= val.provider + ':'
-        p.small= JSON.stringify(val)
-        p.small= val.profile.email
-        p.small bob
-    else
-      | NONE
-  h2 Linked Account(s)
-  ul.list-inline.list-unstyled
-    li
-      a.btn.btn-primary(href="/link/facebook") Link Facebook
-    li
-      a.btn.btn-primary(href="/link/google") Link Google
-  p.small
-    if user.accounts.length !== 0
-      each val in user.accounts
-        h4= val.provider + ':'
-        p.small= JSON.stringify(val)
-    else
-      | NONE
+  .row
+    .col-md-6.col-md-offset-3
+      form(role='form', action='/reservetime', method='post')
+        .form-group
+          label(for='username') Please enter the start date in format DD-MM-YYYY
+          input#username.form-control(type='text', name='startDate', placeholder='Start date', value='11-11-2016')
+        .form-group
+          label(for='password') Please enter the end date in format DD-MM-YYYY
+          input#password.form-control(type='text', name='finishDate', placeholder='End date', value='11-11-2010')
+        button.btn.btn-default(type='submit') Look for a reservation!
+      br
+      if (messages.error)
+        p
+          span(style="color:red")= messages.error

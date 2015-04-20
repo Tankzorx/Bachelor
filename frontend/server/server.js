@@ -100,26 +100,12 @@ app.get('/', function (req, res, next) {
 });
 
 app.get('/auth/account', ensureLoggedIn('/login.html'), function (req, res, next) {
-  console.log(req.user)
   res.render('pages/loginProfiles', {
     user: req.user,
     url: req.url
   });
 });
 
-app.get('/link/account', ensureLoggedIn('/login.html'), function (req, res, next) {
-  res.render('pages/linkedAccounts', {
-    user: req.user,
-    url: req.url
-  });
-});
-
-app.get('/local', function (req, res, next){
-  res.render('pages/local', {
-    user: req.user,
-    url: req.url
-  });
-});
 
 app.get('/signup', function (req, res, next){
   res.render('pages/signup', {
@@ -129,9 +115,7 @@ app.get('/signup', function (req, res, next){
 });
 
 app.post('/signup', function (req, res, next) {
-
   var User = app.models.user;
-
   var newUser = {};
   newUser.email = req.body.email.toLowerCase();
   newUser.username = req.body.username.trim();
@@ -157,24 +141,39 @@ app.post('/signup', function (req, res, next) {
   });
 });
 
-app.get('/login', function (req, res, next){
-  res.render('pages/login', {
-    user: req.user,
-    url: req.url
-   });
-});
-
-app.get('/link', function (req, res, next){
-  res.render('pages/link', {
-    user: req.user,
-    url: req.url
-  });
-});
-
 app.get('/auth/logout', function (req, res, next) {
   req.logout();
   res.redirect('/');
 });
+
+
+// CALLS TO BACKEND
+var request = require("request");
+var unirest = require("unirest");
+app.get('/reservetime', ensureLoggedIn('/login.html'), function (req, res, next) {
+  console.log("MAGNUS LAVER IDIOT DUMME DEBUG BESKEDER.")
+  
+});
+
+app.post('/reservetime', ensureLoggedIn('/login.html'), function (req, res, next) {
+  console.log("Posted to frontends reservetime")
+  console.log(req.body);
+
+  console.log(req.user.profiles[0].credentials.accessToken)
+  var token = "?access_token=" + req.user.profiles[0].credentials.accessToken
+
+  unirest.post('https://localhost:3000/api/reservations/available' + token)
+  .header("Content-type", "application/json")
+  .send({"startDate":"Mon Apr 20 2015 15:44:54 GMT+0200 (CEST)",
+         "finishDate":"Mon Apr 20 2015 15:44:58 GMT+0200 (CEST)"})
+  .end(function (response) {
+    console.log(response.body);
+    res.render("pages/reservetime",response.body)
+  });
+
+
+});
+
 
 // -- Mount static files here--
 // All static middleware should be registered at the end, as all requests

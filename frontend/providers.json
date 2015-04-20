@@ -12,6 +12,7 @@
     "authorizationURL": "https://localhost:3000/oauth/authorize",
     "tokenURL": "https://localhost:3000/oauth/token",
     "profileURL": "https://localhost:3000/me",
-    "scope": ["full"]
+    "scope": ["full"],
+    "resourceOwnerPassword": true
   }
 }

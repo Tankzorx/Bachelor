@@ -23,8 +23,7 @@ var httpsOptions = {
 
 
 app.use( function( req, res, next ) {
-
-    console.log( "world" );
+    console.log("Backend received a request.")
     next();
 
 } );

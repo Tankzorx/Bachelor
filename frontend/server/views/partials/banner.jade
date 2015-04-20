@@ -3,9 +3,5 @@
     .row
       .col-md-12
         .well
-          h1 User Logged in!
-          h3 Hello: #{user.username}
-          p.small User Id: #{user.id}
-          p.small Email: #{user.email}
-          p.small #{user}
+          h3 Hello: #{user.profiles[0].profile.email}
   block content
