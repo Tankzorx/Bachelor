@@ -3,73 +3,73 @@ var app = express();
 var fs = require("fs");
 
 // This is for testing scheduling.
-var schedule = require("node-schedule");
-var http = require("http");
-var today = new Date();
-console.log(today)
-var date_vi_faar_fra_post_request = new Date(2015,2,30,today.getHours(),today.getMinutes(),today.getSeconds()+5);
-console.log(date_vi_faar_fra_post_request)
-schedule.scheduleJob(date_vi_faar_fra_post_request,function() {
-	console.log("Let the fun swag begin.")
-	var options = {
-		host: "127.0.0.1",
-		//hostname: "www.google.com",
-		path: "/loadByUUID/" + "smallest",
-		port: "3002",
-		//method: "GET"
-	}
-	http.get(options,function(response) {
+// var schedule = require("node-schedule");
+// var http = require("http");
+// var today = new Date();
+// console.log(today)
+// var date_vi_faar_fra_post_request = new Date(2015,2,30,today.getHours(),today.getMinutes(),today.getSeconds()+5);
+// console.log(date_vi_faar_fra_post_request)
+// schedule.scheduleJob(date_vi_faar_fra_post_request,function() {
+// 	console.log("Let the fun swag begin.")
+// 	var options = {
+// 		host: "127.0.0.1",
+// 		//hostname: "www.google.com",
+// 		path: "/loadByUUID/" + "smallest",
+// 		port: "3002",
+// 		//method: "GET"
+// 	}
+// 	http.get(options,function(response) {
 
-	}).on("error",function(e) {
-		console.log("ERROR")
-	})
-})
+// 	}).on("error",function(e) {
+// 		console.log("ERROR")
+// 	})
+// })
 
 /*
  * Forward data from superpc to 
  *
  *
  */
-var net = require("net");
+// var net = require("net");
 
-server = net.createServer(function (socket) {
-	console.log("Connected" + socket.remoteAddress + ":" + socket.remotePort)
+// server = net.createServer(function (socket) {
+// 	console.log("Connected" + socket.remoteAddress + ":" + socket.remotePort)
 
-	var superPC_opts = {
-		host: "127.0.0.1",
-		port: 5901
-	}
+// 	var superPC_opts = {
+// 		host: "127.0.0.1",
+// 		port: 5901
+// 	}
 
-	var superPC_socket = net.connect(superPC_opts,function() {
-		console.log("Connected to virtual stream");
-	});
+// 	var superPC_socket = net.connect(superPC_opts,function() {
+// 		console.log("Connected to virtual stream");
+// 	});
 
-	// Data from superPC, write it to user.
-	superPC_socket.on("data",function(data) {
-		socket.write(data);
+// 	// Data from superPC, write it to user.
+// 	superPC_socket.on("data",function(data) {
+// 		socket.write(data);
 
-	})
+// 	})
 
-	// Data from user, write it to superPC.
-  socket.on("data",function (data) {
-      superPC_socket.write(data);
-  })
+// 	// Data from user, write it to superPC.
+//   socket.on("data",function (data) {
+//       superPC_socket.write(data);
+//   })
 
-  socket.on("end",function(err) {
-  	console.log("Client ended");
-  	socket.end();
-  	superPC_socket.end();
-  })
+//   socket.on("end",function(err) {
+//   	console.log("Client ended");
+//   	socket.end();
+//   	superPC_socket.end();
+//   })
 
-  superPC_socket.on("end",function(err) {
-  	console.log("Super pc ended stream?")
-  	socket.end();
-  	superPC_socket.end();
-  })
+//   superPC_socket.on("end",function(err) {
+//   	console.log("Super pc ended stream?")
+//   	socket.end();
+//   	superPC_socket.end();
+//   })
 
-});
+// });
 
-server.listen(9000,"localhost")
+// server.listen(9000,"localhost")
 
 
 

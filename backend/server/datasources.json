@@ -1,9 +1,19 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "file":"mydata.json"
   },
   "postgresql": {
+    "host": "mydbinstance2.cahs8wbuo5wk.us-west-2.rds.amazonaws.com",
+    "port": 5432,
+    "database": "mydb",
+    "username": "awsuser",
+    "password": "mypassword",
+    "name": "postgresql",
+    "connector": "postgresql"
+  },
+  "paostgresql": {
     "host": "bachelordb.cqezifzc8aaz.eu-central-1.rds.amazonaws.com",
     "port": 5432,
     "database": "sessionDB",

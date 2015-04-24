@@ -5,11 +5,11 @@ block content
     .col-md-6.col-md-offset-3
       form(role='form', action='/reservetime', method='post')
         .form-group
-          label(for='username') Please enter the start date in format DD-MM-YYYY
-          input#username.form-control(type='text', name='startDate', placeholder='Start date', value='11-11-2016')
+          label(for='username') Please enter the start date in format YYYY,MM,DD,HH,MM
+          input#username.form-control(type='text', name='startDate', placeholder='Start date', value='2010,2,9,10,30')
         .form-group
-          label(for='password') Please enter the end date in format DD-MM-YYYY
-          input#password.form-control(type='text', name='finishDate', placeholder='End date', value='11-11-2010')
+          label(for='password') Please enter the end date in format YYYY,MM,DD,HH,MM
+          input#password.form-control(type='text', name='finishDate', placeholder='End date', value='2010,10,9,10,30')
         button.btn.btn-default(type='submit') Look for a reservation!
       br
       if (messages.error)

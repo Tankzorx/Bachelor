@@ -101,45 +101,45 @@ function registerFrontend(clients, cb) {
         {
           description: '1',
           computerId: computers[0].id,
-          startDate: new Date(2014, 1, 1, 11),
+          startDate: (new Date())+15*1000+600000,
           finishDate: new Date(2018, 1, 1, 11),
           clientId: clients[0].id
-        },
-        {
-          description: '2',
-          computerId: computers[1].id,
-          startDate: new Date(2014, 2, 2, 11),
-          finishDate: new Date(2020, 4, 4, 11),
-          clientId: clients[1].id
-        },
-        {
-          description: '3',
-          computerId: computers[2].id,
-          startDate: new Date(2017, 3, 3, 11),
-          finishDate: new Date(2017, 3, 3, 11),
-          clientId: clients[2].id
-        },
-        {
-          description: '4',
-          computerId: computers[2].id,
-          startDate: new Date(2017, 4, 4, 11),
-          finishDate: new Date(2017, 4, 4, 11),
-          clientId: clients[0].id
-        },
-        {
-          description: '5',
-          computerId: computers[2].id,
-          startDate: new Date(2017, 5, 5, 11),
-          finishDate: new Date(2017, 5, 5, 11),
-          clientId: clients[1].id
-        },
-        {
-          description: '6',
-          computerId: computers[2].id,
-          startDate: new Date(2017, 6, 6, 11),
-          finishDate: new Date(2017, 6, 6, 11),
-          clientId: clients[2].id
-        }
+        }//,
+        // {
+        //   description: '2',
+        //   computerId: computers[1].id,
+        //   startDate: new Date(2014, 2, 2, 11),
+        //   finishDate: new Date(2020, 4, 4, 11),
+        //   clientId: clients[1].id
+        // },
+        // {
+        //   description: '3',
+        //   computerId: computers[2].id,
+        //   startDate: new Date(2017, 3, 3, 11),
+        //   finishDate: new Date(2017, 3, 3, 11),
+        //   clientId: clients[2].id
+        // },
+        // {
+        //   description: '4',
+        //   computerId: computers[2].id,
+        //   startDate: new Date(2017, 4, 4, 11),
+        //   finishDate: new Date(2017, 4, 4, 11),
+        //   clientId: clients[0].id
+        // },
+        // {
+        //   description: '5',
+        //   computerId: computers[2].id,
+        //   startDate: new Date(2017, 5, 5, 11),
+        //   finishDate: new Date(2017, 5, 5, 11),
+        //   clientId: clients[1].id
+        // },
+        // {
+        //   description: '6',
+        //   computerId: computers[2].id,
+        //   startDate: new Date(2017, 6, 6, 11),
+        //   finishDate: new Date(2017, 6, 6, 11),
+        //   clientId: clients[2].id
+        // }
       ], cb);
     });
   }

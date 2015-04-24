@@ -152,23 +152,53 @@ var request = require("request");
 var unirest = require("unirest");
 app.get('/reservetime', ensureLoggedIn('/login.html'), function (req, res, next) {
   console.log("MAGNUS LAVER IDIOT DUMME DEBUG BESKEDER.")
-  
+  var available_comps = req.query.available.split(",");
+  res.render("pages/reservetime",{"available":available_comps,startDate:req.query.startDate,finishDate:req.query.finishDate});
 });
+
+app.get("/makereservation", ensureLoggedIn("/login.html"), function(req,res,next) {
+  var startDate = req.query.startDate
+  var finishDate = req.query.finishDate
+  var computerId = req.query.comp
+  var clientId = req.user.profiles[0].userId
+  console.log(req.user.profiles[0])
+  console.log(clientId)
+  var token = "?access_token=" + req.user.profiles[0].credentials.accessToken
+
+  unirest.post("https://localhost:3000/api/reservations" + token)
+  .header("Content-type", "application/json")
+  .send({"startDate":startDate,
+         "finishDate": finishDate,
+         "clientId": clientId,
+         "computerId": computerId,
+         "description": "fuckin' a"})
+  .end(function(response) {
+    console.log("hello")
+    console.log(response)
+    res.redirect("/auth/account")
+  })
+})
 
 app.post('/reservetime', ensureLoggedIn('/login.html'), function (req, res, next) {
   console.log("Posted to frontends reservetime")
-  console.log(req.body);
+  var start_date_list = req.body.startDate.split(",")
+  var finish_date_list = req.body.finishDate.split(",")
+  if (start_date_list.length != 4 || finish_date_list.length != 4) {console.log("User gave us wrong dates")};
+  var startDate = new Date(start_date_list[0],start_date_list[1],start_date_list[2],start_date_list[3],0,0,0)
+  var finishDate = new Date(finish_date_list[0],finish_date_list[1],finish_date_list[2],finish_date_list[3],0,0,0)
 
   console.log(req.user.profiles[0].credentials.accessToken)
   var token = "?access_token=" + req.user.profiles[0].credentials.accessToken
 
   unirest.post('https://localhost:3000/api/reservations/available' + token)
   .header("Content-type", "application/json")
-  .send({"startDate":"Mon Apr 20 2015 15:44:54 GMT+0200 (CEST)",
-         "finishDate":"Mon Apr 20 2015 15:44:58 GMT+0200 (CEST)"})
+  .send({"startDate":startDate,
+         "finishDate":finishDate})
   .end(function (response) {
     console.log(response.body);
-    res.render("pages/reservetime",response.body)
+    var qstring = "?available=" + response.body.available.join();
+    console.log(qstring);
+    res.redirect("/reservetime" + qstring + "&startDate=" + startDate + "&finishDate=" + finishDate)
   });
 
 
