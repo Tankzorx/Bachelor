@@ -25,6 +25,7 @@
     "loopback-connector-postgresql": "^1.6.1",
     "loopback-datasource-juggler": "^2.21.0",
     "loopback-explorer": "^1.7.1",
+    "node-uuid": "^1.4.3",
     "serve-favicon": "^2.2.0",
     "underscore": "^1.8.2"
   }

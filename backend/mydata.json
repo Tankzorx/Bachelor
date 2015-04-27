@@ -1,0 +1,37 @@
+{
+  "ids": {
+    "User": 1,
+    "Application": 1,
+    "Frontend": 34,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "OAuthAccessToken": 3,
+    "OAuthAuthorizationCode": 1,
+    "OAuthClientRegistration": 1,
+    "OAuthPermission": 1,
+    "OAuthScope": 1,
+    "OAuthScopeMapping": 1
+  },
+  "models": {
+    "User": {},
+    "Application": {},
+    "Frontend": {
+      "frontend": "{\"id\":\"frontend\",\"name\":\"dev-frontend\",\"owner\":\"2\",\"clientKey\":\"68b6414a0108f6e2967a4b1c7b26f03d33d1a1a0\",\"javaScriptKey\":\"f38a93e16036f2bfd09a8411734098549edefee5\",\"restApiKey\":\"secret\",\"windowsKey\":\"58f6115e100deaafa7fb8c0bfd5648ffcd65d86c\",\"masterKey\":\"8b355291d757033d4a9c5bd696a78a52d43e8e60\",\"authenticationEnabled\":true,\"anonymousAllowed\":true,\"status\":\"sandbox\",\"created\":\"2015-04-27T12:24:10.665Z\",\"modified\":\"2015-04-27T12:24:10.665Z\",\"publicKey\":\"-----BEGIN CERTIFICATE-----\\nMIIDbjCCAlYCCQDYD22Ki5TcDDANBgkqhkiG9w0BAQUFADB5MQswCQYDVQQGEwJV\\nUzETMBEGA1UECBMKQ2FsaWZvcm5pYTESMBAGA1UEBxMJU2FuIE1hdGVvMRkwFwYD\\nVQQKExBTdHJvbmdMb29wLCBJbmMuMSYwJAYJKoZIhvcNAQkBFhdjYWxsYmFja0Bz\\ndHJvbmdsb29wLmNvbTAeFw0xNDEwMDEyMzAwMTJaFw0xNjA5MzAyMzAwMTJaMHkx\\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRIwEAYDVQQHEwlTYW4g\\nTWF0ZW8xGTAXBgNVBAoTEFN0cm9uZ0xvb3AsIEluYy4xJjAkBgkqhkiG9w0BCQEW\\nF2NhbGxiYWNrQHN0cm9uZ2xvb3AuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A\\nMIIBCgKCAQEAviq/LUdJBkQW1aghAQcW4of1MD3kGzLc57IyLEKQKs7geiHsxSYW\\ni3DruJKp1V+seXVGV78b06sgq3NPpkge4GPb1uowk3Ht8y4xs1334btwDrCkv3yx\\nnOTLGrve6Q02+2lJx+emA8GRE7eBNU6C/BDvDVM4clfvDzyyayhZarsSYon/Xmam\\nGOig5vos9mCvjojfKVnBrKmSX63eCf0QccGVznSCCXrIrFLkaDg3JBgc9f3XYwaj\\numig3e8SUrmb0c1vGE9j57kJg92b42FH1S2yvAwB2pCZmkrD0NDAXx9s8irsR3og\\n/LTADrrI60f5onqd8LhSi87bExVDtgi7hwIDAQABMA0GCSqGSIb3DQEBBQUAA4IB\\nAQC3QS2XSB9jvkD0g/A932UQrxtj6IdgwWx3yEA9P4azLcaD1WfFBI+SCJI6xcvo\\nrq4mz7E7JOar6tIBw6tBH5X0Ehl0bA+8Jmuh2F410UraNDmgzUeRP2N3nZ+l6yRT\\nDPIOyMRhoyrhw5Nlv4r1253Z5IuupGuf9Gl6jF7vHcGFCEBQFNybluW0O5T9Jonq\\n4782G6e3hGrC2lBxddBdf/ahK01uVlsjx4aSiXEP+i3IIm4jspAx7ZwrS7oVVWAh\\nbUszOEAjuFLheQuTp08r0aZ0h/3tolr430vG4wx4O6mAZ4n59RK+qFh3hVjit5Bc\\nbMRkyqoUCc/V0SFCbPQB68at\\n-----END CERTIFICATE-----\\n\"}"
+    },
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "OAuthAccessToken": {
+      "EyshFzNHmjLua2mf6AiVhzhkwbVBSpP0": "{\"id\":\"EyshFzNHmjLua2mf6AiVhzhkwbVBSpP0\",\"appId\":\"frontend\",\"userId\":2,\"issuedAt\":\"2015-04-27T10:04:48.198Z\",\"expiresIn\":1209600,\"scopes\":[\"full\"],\"refreshToken\":\"mrsa0u4AUrnXe6ny4URmsXPADhwI0ghI\"}",
+      "D40aeUI6wTMWSNDZdjLbfsrqWFL5iGWA": "{\"id\":\"D40aeUI6wTMWSNDZdjLbfsrqWFL5iGWA\",\"appId\":\"frontend\",\"userId\":2,\"issuedAt\":\"2015-04-27T12:05:37.432Z\",\"expiresIn\":1209600,\"scopes\":[\"full\"],\"refreshToken\":\"nf864cHWCWetsezSZtINPDJNbHacSneP\"}"
+    },
+    "OAuthAuthorizationCode": {},
+    "OAuthClientRegistration": {},
+    "OAuthPermission": {},
+    "OAuthScope": {},
+    "OAuthScopeMapping": {}
+  }
+}

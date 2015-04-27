@@ -4,7 +4,7 @@
     "connector": "memory",
     "file":"mydata.json"
   },
-  "postgresql": {
+  "p1ostgresql": {
     "host": "mydbinstance2.cahs8wbuo5wk.us-west-2.rds.amazonaws.com",
     "port": 5432,
     "database": "mydb",
@@ -13,12 +13,21 @@
     "name": "postgresql",
     "connector": "postgresql"
   },
-  "paostgresql": {
+  "p2ostgresql": {
     "host": "bachelordb.cqezifzc8aaz.eu-central-1.rds.amazonaws.com",
     "port": 5432,
     "database": "sessionDB",
     "username": "swagadmin",
     "password": "swagswag",
+    "name": "postgresql",
+    "connector": "postgresql"
+  },
+  "postgresql": {
+    "host": "mydb.cqezifzc8aaz.eu-central-1.rds.amazonaws.com",
+    "port": 5432,
+    "database": "sessionDB",
+    "username": "awsuser",
+    "password": "mypassword",
     "name": "postgresql",
     "connector": "postgresql"
   }

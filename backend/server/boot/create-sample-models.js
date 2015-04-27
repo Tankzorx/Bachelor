@@ -97,11 +97,13 @@ function registerFrontend(clients, cb) {
       if (err) {
         return cb(err);
       }
+      var startDate = new Date(new Date().getTime() + 00000 + 7*1000)
+      console.log(startDate)
       Reservation.create([
         {
           description: '1',
           computerId: computers[0].id,
-          startDate: (new Date())+15*1000+600000,
+          startDate: startDate,
           finishDate: new Date(2018, 1, 1, 11),
           clientId: clients[0].id
         }//,
