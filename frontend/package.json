@@ -29,9 +29,5 @@
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.2.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/strongloop-community/loopback-example-passport.git"
   }
 }

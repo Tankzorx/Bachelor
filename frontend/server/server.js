@@ -2,12 +2,8 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 
-
-/// THIS IS BECAUSE SOME CERT ERROR WTFD?!?!?!?!?!??!
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = module.exports = loopback();
-
-
 
 
 // Passport configurators..
@@ -147,11 +143,8 @@ app.get('/auth/logout', function (req, res, next) {
 });
 
 
-// CALLS TO BACKEND
-var request = require("request");
 var unirest = require("unirest");
 app.get('/reservetime', ensureLoggedIn('/login.html'), function (req, res, next) {
-  console.log("MAGNUS LAVER IDIOT DUMME DEBUG BESKEDER.")
   var available_comps = req.query.available.split(",");
   res.render("pages/reservetime",{"available":available_comps,startDate:req.query.startDate,finishDate:req.query.finishDate});
 });
@@ -171,10 +164,8 @@ app.get("/makereservation", ensureLoggedIn("/login.html"), function(req,res,next
          "finishDate": finishDate,
          "clientId": clientId,
          "computerId": computerId,
-         "description": "fuckin' a"})
+         "description": "test"})
   .end(function(response) {
-    console.log("hello")
-    console.log(response)
     res.redirect("/auth/account")
   })
 })

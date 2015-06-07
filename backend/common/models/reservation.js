@@ -108,19 +108,6 @@ module.exports = function (Reservation) {
       })
     })
 
-
-    // Hvad vi mangler:
-    // Blive enige om navngivning på "aktuelle" image filer
-    // Idéen er at de ikke anvende imagefiler har navn== clientId
-    // Men at de når de bliver flyttet skifter navn til et generisk navn f.eks test.img
-    // På den måde undgår at ændre NOGET som helst i xml filerne.
-
-    // Streaming... Mangler alt
-
-    // Schedule et job til at stoppe en session.
-
-    // Tests? Vi har create-sample-models, kan vi finde på mere?
-
     next();
   })
 

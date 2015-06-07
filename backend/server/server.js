@@ -5,15 +5,9 @@ var oauth2 = require('loopback-component-oauth2');
 var path = require('path');
 var site = require('./site');
 
-/// THIS IS BECAUSE SOME CERT ERROR WTFD?!?!?!?!?!??!
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
-
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 var app = module.exports = loopback();
-
-
 
 var sslCert = require('./private/ssl_cert');
 var httpsOptions = {
@@ -25,11 +19,9 @@ var httpsOptions = {
 app.use( function( req, res, next ) {
     console.log("Backend received a request.")
     next();
+});
 
-} );
 
-
-//SESSION?!?!?
 app.middleware('session', loopback.session({ saveUninitialized: true,
   resave: true, secret: 'keyboard cat' }));
 
@@ -50,10 +42,6 @@ oauth2.oAuth2Provider(
   options // The options
 );
 
-
-
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // Set up login/logout forms
@@ -64,8 +52,6 @@ app.get('/callback', site.callbackPage);
 
 
 
-
-
 var auth = oauth2.authenticate({session: false, scope: 'full'}); //var auth = oauth2.authenticate({session: false, scope: 'demo'});
 app.use(['/api', '/me'], auth);
 
@@ -73,14 +59,6 @@ app.get('/me', function(req, res) {
   res.json({ 'user_id': req.user.id, name: req.user.username, email: req.user.email,
     accessToken: req.authInfo.accessToken });
 });
-
-
-
-
-
-
-
-
 
 
 app.start = function() {
